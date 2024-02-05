@@ -1,5 +1,6 @@
 package Dz0202;
 
+import javax.sound.midi.MidiChannel;
 import java.util.Scanner;
 
 public class Application {
@@ -24,6 +25,9 @@ public class Application {
     private static boolean isSeasonsExist(Seasons[] seasons, Object nameOfSeasons) {
         return false;
     }
+    public static boolean NameOfMonths(String[] args, String nameMonths){return false;}
+    private static boolean isMonthExist(Months[] months, String nameMonth) {return false;}
+
 
     public static void main(String[] args) {
         private boolean isMonthsExist ();
@@ -53,15 +57,71 @@ public class Application {
                     nameOfSeasons = null;
                     if (isSeasonsExist(seasons, nameOfSeasons)) {
                        for (Months c : months);{
-                           if (c.getSeasons().name().equaIsIgnoreCase(nameOfSeasons)){
+                            if (c.getSeasons().name().equaIsIgnoreCase(nameOfSeasons)){
                                System.out.println(c);
                                
 
                            }
+                            else {
+                                System.out.println("назва пори року" + nameOfSeasons.toString() + "does not exist");
+                            }
+                            case "3" -> {
+                                for (int i = 0; i < months.length; i++ ){
+                                    int index = months[i].getDays();
+                                    if(index % 2 == 0){
+                                        System.out.println(months[i]);
+                                    }
+                                }
+                            }
+                            case "4" -> {
+                                for (int i = 0; i < months.length; i++ ){
+                                    int index = months[i].getDays();
+                                    if(index % 2 == 1){
+                                        System.out.println(months[i]);
+                                    }
+                                    case "5" -> {
+                                        scanner = new Scanner(System.in);
+                                        System.out.println("Введіть місяць: ");
+                                        String nameMonth = scanner.next();
+                                        if (isMonthExist(months, nameMonth)){
+                                            Months monthss = Months.valueOf(nameMonth);
+                                            int index = monthss.ordinal();
+                                            if (index == months.length - 1){
+                                                System.out.println(months[0]);
+                                            }else {
+                                                System.out.println(months[index + 1]);
+                                            }
+                                        }else {
+                                            System.out.println("Місяць не знайдено");
+                                        }
+                                    }
+                                    case "6" -> {
+                                        scanner = new Scanner(System.in);
+                                        System.out.println("Введіть місяць: ");
+                                        String nameMonths = scanner.next();
+                                        if (isMonthExist(months, nameMonths)){
+                                            Months monthss2 = Months.valueOf(nameMonths);
+                                           int index = monthss2.ordinal();
+                                            if (index == 0){
+                                                System.out.println(months[11]);
+                                            }else {
+                                                System.out.println(months[index - 1]);
+                                            }
+                                        }else {
+                                            System.out.println("Місяць не знайдений");
+                                        }
+                                    }
+
+                                }
+                            }
+
+
+                        }
+                            }
                         }
                     }
                 }
             }
-        }
-    }
+
+
 }

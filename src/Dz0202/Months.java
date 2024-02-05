@@ -1,40 +1,47 @@
 package Dz0202;
 
 public enum Months {
-    СІЧЕНЬ(31, Seasons.ЗИМА),
-    ЛЮТИЙ(28, Seasons.ЗИМА),
-    БЕРЕЗЕНЬ(31, Seasons.ВЕСНА),
-    КВІТЕНЬ(30, Seasons.ВЕСНА),
-    ТРАВЕНЬ(31, Seasons.ВЕСНА),
-    ЧЕРВЕНЬ(30, Seasons.ЛІТО),
-    ЛИПЕНЬ(31, Seasons.ЛІТО),
-    СЕРПЕНЬ(31, Seasons.ЛІТО),
-    ВЕРЕСЕНЬ(30, Seasons.ЛІТО),
-    ЖОВТЕНЬ(31, Seasons.ОСІНЬ),
-    ЛИСТОПАД(30, Seasons.ОСІНЬ),
-    ГРУДЕНЬ(31, Seasons.ЗИМА);
-    private int дні;
-    private Seasons сезон;
+    JANUARY(31, Seasons.WINTER),
+    FEBRUARY(28, Seasons.WINTER),
+    MARCH(31, Seasons.SPRING),
+    APRIL(30, Seasons.SPRING),
+    MAY(31, Seasons.SPRING),
+    JUNE(30, Seasons.SUMMER),
+    JULY(31, Seasons.SUMMER),
+    AUGUST(31, Seasons.SUMMER),
+    SEPTEMBER(30, Seasons.AUTUMN),
+    OCTOBER(31, Seasons.AUTUMN),
+    NOVEMBER(30, Seasons.AUTUMN),
+    DECEMBER(31, Seasons.WINTER);
+    private int day;
+    private Seasons seasons;
 
 
-    Months(int дні, Seasons сезон) {
-        this.дні = дні;
-        this.сезон = сезон;
+    Months(int day, Seasons seasons) {
+        this.day = day;
+        this.seasons = seasons;
     }
 
-    public int getДні() {
-        return дні;
+    public int getDay() {
+        return day;
     }
 
-    public void setДні(int дні) {
-        this.дні = дні;
+    public void setDay(int day) {
+        this.day = day;
     }
 
-    public Seasons getСезон() {
-        return сезон;
+    public Seasons getSeasons() {
+        return seasons;
     }
 
-    public void setСезон(Seasons сезон) {
-        this.сезон = сезон;
+    public void setSeasons(Seasons seasons) {
+        this.seasons = seasons;
+    }
+
+    private int getDays() {
+        return 0;
     }
 }
+
+
+
